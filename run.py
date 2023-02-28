@@ -17,15 +17,15 @@ def generate_data():
             count+=1
         except:
             pass
-        
+
     return t_data
 
 def main():
     t_data = generate_data()
     for dat in t_data:
         try:
-            response  = requests.post('http://[linux-instance-external-IP]/fruits', data=dat)
-            print("Load Entry Successful")
+            if requests.post('http://34.28.82.143/fruits/', json=dat):
+                print("Load Entry Successful")
         except:
             print ("Load Entry Unsuccessful")
 
